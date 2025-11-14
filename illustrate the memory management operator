@@ -1,0 +1,55 @@
+Aim
+To write a C++ program that illustrates the use of memory management operators new and delete for dynamic memory allocation and deallocation.
+
+Algorithm
+Start the program.
+Declare a pointer variable.
+Use the new operator to dynamically allocate memory for:
+a single variable
+an array
+Store values in the dynamically allocated memory.
+Display the values.
+Use the delete operator to free memory allocated for a single variable.
+Use the delete[] operator to free the memory allocated for the array.
+End the program.
+
+Program (C++)
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Dynamic allocation of a single integer
+    int *p = new int;
+    *p = 50;
+
+    cout << "Value stored in dynamically allocated variable: " << *p << endl;
+
+    // Dynamic allocation of an array
+    int *arr = new int[3];
+    arr[0] = 10;
+    arr[1] = 20;
+    arr[2] = 30;
+
+    cout << "Values stored in dynamically allocated array:" << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // Deallocating memory
+    delete p;        // frees single variable
+    delete[] arr;    // frees array memory
+
+    cout << "Memory successfully deallocated." << endl;
+
+    return 0;
+}
+
+Sample Output (Result)
+Value stored in dynamically allocated variable: 50
+Values stored in dynamically allocated array:
+10 20 30 
+Memory successfully deallocated.
+
+Result
+Thus, the program demonstrates the use of new and delete operators for dynamic memory allocation and deallocation in C++.
