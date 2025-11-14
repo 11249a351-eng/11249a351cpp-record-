@@ -1,0 +1,53 @@
+Aim
+To write a program that demonstrates defining member functions inside a class and outside a class in Object-Oriented Programming.
+
+Algorithm
+Start the program.
+Create a class with data members.
+Define one member function inside the class.
+Declare another member function inside the class but define it outside using scope resolution.
+Create objects of the class.
+Call both types of member functions using the object.
+Display the output.
+End the program.
+
+Program (Python Equivalent Demonstration)
+(Python does not use scope resolution like C++, but the concept is demonstrated using inside and outside class definitions.)
+# Program to illustrate member functions defined inside and outside the class
+
+class Student:
+    # Constructor
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # Member function defined inside the class
+    def show_name(self):
+        print("Name:", self.name)
+
+    # Declaring method that will be defined outside the class
+    def show_age(self):
+        pass
+
+
+# Defining member function outside the class
+def show_age_outside(self):
+    print("Age:", self.age)
+
+# Assigning the outside function to the class
+Student.show_age = show_age_outside
+
+
+# Creating an object
+s = Student("Alice", 18)
+
+# Calling member functions
+s.show_name()   # Function defined inside class
+s.show_age()    # Function defined outside class
+
+Output (Result)
+Name: Alice
+Age: 18
+
+Result
+Thus, the program successfully demonstrates member functions that are defined inside the class and defined outside the class.
