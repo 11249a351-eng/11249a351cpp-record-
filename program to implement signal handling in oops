@@ -1,0 +1,59 @@
+Aim
+To write a C++ program that demonstrates signal handling using the signal() function and signal handler routines.
+
+Algorithm
+Start the program.
+Include the <csignal> and <iostream> headers.
+Define a signal handler function.
+Register the signal handler using signal(signal_number, handler).
+Run an infinite loop (or wait for user action) to keep program active.
+When the user presses Ctrl + C, the signal handler is invoked.
+Display message inside signal handler.
+Terminate the program gracefully.
+
+Program (C++ – Signal Handling using SIGINT)
+#include <iostream>
+#include <csignal>
+#include <unistd.h>
+using namespace std;
+
+void signalHandler(int signum) {
+    cout << "\nInterrupt Signal (" << signum << ") received.\n";
+    cout << "Exiting program safely...\n";
+    exit(signum);
+}
+
+int main() {
+    // Register signal handler
+    signal(SIGINT, signalHandler);
+
+    cout << "Program running..." << endl;
+    cout << "Press Ctrl + C to trigger signal (SIGINT)." << endl;
+
+    while (1) {
+        cout << "Working..." << endl;
+        sleep(1);   // slow down loop
+    }
+
+    return 0;
+}
+
+Sample Output (Result)
+Program Output Before Signal
+Program running...
+Press Ctrl + C to trigger signal (SIGINT).
+Working...
+Working...
+Working...
+
+When User Presses Ctrl + C
+^C
+Interrupt Signal (2) received.
+Exiting program safely...
+
+Result
+The program successfully demonstrates signal handling in C++ using:
+signal() function
+User-defined signal handler
+Handling asynchronous events such as Ctrl + C (SIGINT)
+The program terminates gracefully when a signal is received.
