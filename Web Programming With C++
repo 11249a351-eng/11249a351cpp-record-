@@ -1,0 +1,68 @@
+Aim
+To write a C++ program that generates a dynamic web page using CGI (Common Gateway Interface).
+
+⭐ Program 1: Simple C++ CGI Program (Display Webpage)
+Algorithm
+Start the C++ program
+Print the HTTP header: Content-Type: text/html
+Print HTML tags such as <html>, <body>
+Print content inside the HTML
+End the program
+
+Code
+Save as hello.cgi (after compiling).
+
+#include <iostream>
+using namespace std;
+int main() {
+    cout << "Content-Type: text/html\n\n";
+    cout << "<html>";
+    cout << "<head><title>Welcome</title></head>";
+    cout << "<body>";
+    cout << "<h1>Hello from C++ Web Programming!</h1>";
+    cout << "<p>This webpage is generated using a C++ CGI Program.</p>";
+    cout << "</body>";
+    cout << "</html>";
+    return 0;
+}
+
+Output (Displayed in Browser)
+Hello from C++ Web Programming!
+This webpage is generated using a C++ CGI Program.
+
+⭐ Program 2: C++ CGI Program to Read Form Input
+HTML Form (save as form.html)
+<!DOCTYPE html>
+<html>
+<body>
+<form action="/cgi-bin/process.cgi" method="GET">
+    Enter your name: <input type="text" name="name">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+C++ CGI Script (process.cgi)
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    cout << "Content-Type: text/html\n\n";
+
+    // get data from QUERY_STRING
+    string query = getenv("QUERY_STRING");
+
+    // extract name from query: name=John
+    string name = query.substr(query.find("=") + 1);
+    cout << "<html><body>";
+    cout << "<h2>Welcome, " << name << "!</h2>";
+    cout << "<p>You entered your name through a web form.</p>";
+    cout << "</body></html>";
+    return 0;
+}
+Output (Displayed After Submitting Form)
+Welcome, <name>!
+You entered your name through a web form.
+
+Result
+Web programming using C++ was successfully implemented using CGI scripts to generate dynamic web pages and process form input.
