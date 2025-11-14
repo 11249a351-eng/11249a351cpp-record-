@@ -1,0 +1,60 @@
+Aim
+To write a C++ program that demonstrates file handling, including writing data to a file and reading data from a file using fstream, ofstream, and ifstream classes.
+
+Algorithm
+Start the program.
+Include the <fstream> header for file operations.
+Declare an ofstream object and open a text file.
+Write data into the file.
+Close the file.
+Declare an ifstream object and open the same file.
+Read and display the contents of the file.
+Close the file.
+End the program.
+
+Program (C++ – File Handling Example)
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    // Writing to a file
+    ofstream fout("record.txt");  // open file for writing
+    if (!fout) {
+        cout << "File cannot be created!" << endl;
+        return 0;
+    }
+
+    fout << "Hello, this is a file handling example." << endl;
+    fout << "C++ makes reading and writing files easy.";
+    fout.close();
+
+    // Reading from a file
+    ifstream fin("record.txt");   // open file for reading
+    if (!fin) {
+        cout << "File cannot be opened!" << endl;
+        return 0;
+    }
+
+    cout << "Reading from file:" << endl;
+    string line;
+    while (getline(fin, line)) {
+        cout << line << endl;
+    }
+
+    fin.close();
+    return 0;
+}
+
+Sample Output (Result)
+Reading from file:
+Hello, this is a file handling example.
+C++ makes reading and writing files easy.
+A file named record.txt is created, containing the same text.
+
+Result
+Thus, the program successfully demonstrates file handling operations, including:
+Creating a file
+Writing data to a file
+Reading data from a file
+Using ofstream and ifstream
