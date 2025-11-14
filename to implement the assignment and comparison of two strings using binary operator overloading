@@ -1,0 +1,89 @@
+Aim
+To write a C++ program to implement assignment and comparison of two strings using binary operator overloading.
+
+Algorithm
+Start the program.
+Create a class to store a string (character array).
+Define a constructor to initialize the string.
+Overload the assignment operator (=) to copy one string object to another.
+Overload the comparison operator (==) to compare two string objects.
+In main() create string objects and assign one object to another.
+Use the comparison operator to check if the two strings are equal.
+Display the results.
+End the program.
+
+Program (C++)
+#include <iostream>
+#include <cstring>
+using namespace std;
+class MyString {
+    char str[50];
+
+public:
+    // Constructor
+    MyString(const char *s = "") {
+        strcpy(str, s);
+    }
+
+    // Overloading assignment operator (=)
+    MyString operator=(MyString &obj) {
+        strcpy(this->str, obj.str);
+        return *this;
+    }
+
+    // Overloading comparison operator (==)
+    bool operator==(MyString &obj) {
+        if (strcmp(this->str, obj.str) == 0)
+            return true;
+        else
+            return false;
+    }
+
+    // Function to display string
+    void display() {
+        cout << str;
+    }
+};
+
+int main() {
+    MyString s1("Hello");
+    MyString s2("World");
+    MyString s3;
+
+    cout << "String 1: ";
+    s1.display();
+    
+    cout << "\nString 2: ";
+    s2.display();
+
+    // Using assignment operator
+    s3 = s1;
+
+    cout << "\n\nAfter Assignment (s3 = s1): ";
+    s3.display();
+
+    // Using comparison operator
+    if (s1 == s3)
+        cout << "\n\ns1 and s3 are EQUAL.";
+    else
+        cout << "\n\ns1 and s3 are NOT equal.";
+
+    if (s1 == s2)
+        cout << "\ns1 and s2 are EQUAL.";
+    else
+        cout << "\ns1 and s2 are NOT equal.";
+
+    return 0;
+}
+
+Sample Output (Result)
+String 1: Hello
+String 2: World
+After Assignment (s3 = s1): Hello
+s1 and s3 are EQUAL.
+s1 and s2 are NOT equal.
+
+Result
+Thus, the program successfully demonstrates binary operator overloading for:
+Assignment (=) of one string object to another
+Comparison (==) of two string objects
