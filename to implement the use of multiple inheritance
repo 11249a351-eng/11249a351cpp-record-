@@ -1,0 +1,59 @@
+Aim
+To write a C++ program that demonstrates the use of multiple inheritance where a derived class inherits from two base classes.
+
+Algorithm
+Start the program.
+Create two base classes, each with its own data members and member functions.
+Create a derived class that inherits publicly from both base classes.
+In the derived class, define a member function that uses members of both base classes.
+Create an object of the derived class.
+Call functions from the base classes using the derived class object.
+Display the combined output.
+End the program.
+
+Program (C++)
+#include <iostream>
+using namespace std;
+// First base class
+class A {
+public:
+    void showA() {
+        cout << "This is Class A." << endl;
+    }
+};
+
+// Second base class
+class B {
+public:
+    void showB() {
+        cout << "This is Class B." << endl;
+    }
+};
+
+// Derived class inheriting from both A and B
+class C : public A, public B {
+public:
+    void showC() {
+        cout << "This is Derived Class C (Multiple Inheritance)." << endl;
+    }
+};
+
+int main() {
+    C obj;
+
+    cout << "Multiple Inheritance Output:" << endl;
+    obj.showA();   // From class A
+    obj.showB();   // From class B
+    obj.showC();   // From class C
+
+    return 0;
+}
+
+Sample Output (Result)
+Multiple Inheritance Output:
+This is Class A.
+This is Class B.
+This is Derived Class C (Multiple Inheritance).
+
+Result
+Thus, the program successfully demonstrates multiple inheritance, where a derived class inherits features from two base classes.
