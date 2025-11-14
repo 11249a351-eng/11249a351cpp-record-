@@ -1,0 +1,84 @@
+Aim
+To write a program that demonstrates the use of constructors (default, parameterized, and copy constructor) and destructor in C++.
+
+Algorithm
+Start the program.
+Create a class with data members.
+Define a default constructor to initialize values.
+Define a parameterized constructor to initialize values using arguments.
+Define a copy constructor to copy values of another object.
+Define a destructor to display a message when the object is destroyed.
+Create objects using each type of constructor.
+Display object values to verify constructor operations.
+End the program.
+
+Program (C++)
+#include <iostream>
+using namespace std;
+
+class Sample {
+    int x;
+
+public:
+    // Default constructor
+    Sample() {
+        x = 0;
+        cout << "Default Constructor Called" << endl;
+    }
+
+    // Parameterized constructor
+    Sample(int a) {
+        x = a;
+        cout << "Parameterized Constructor Called" << endl;
+    }
+
+    // Copy constructor
+    Sample(const Sample &obj) {
+        x = obj.x;
+        cout << "Copy Constructor Called" << endl;
+    }
+
+    // Function to display value
+    void display() {
+        cout << "Value of x: " << x << endl;
+    }
+
+    // Destructor
+    ~Sample() {
+        cout << "Destructor Called for object with x = " << x << endl;
+    }
+};
+
+int main() {
+    // Calling default constructor
+    Sample s1;
+    s1.display();
+
+    // Calling parameterized constructor
+    Sample s2(50);
+    s2.display();
+
+    // Calling copy constructor
+    Sample s3(s2);
+    s3.display();
+
+    return 0;
+}
+
+Output (Result)
+Default Constructor Called
+Value of x: 0
+
+Parameterized Constructor Called
+Value of x: 50
+
+Copy Constructor Called
+Value of x: 50
+
+Destructor Called for object with x = 50
+Destructor Called for object with x = 50
+Destructor Called for object with x = 0
+
+
+Result
+Thus, the program successfully demonstrates
