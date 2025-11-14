@@ -1,0 +1,75 @@
+Aim
+To write a C++ program that demonstrates unary operator overloading using a class.
+
+Algorithm
+Start the program.
+Create a class with data members.
+Define a constructor to initialize the data.
+Overload a unary operator (such as ++, --, or unary -).
+Inside the operator function, modify the object’s data.
+Create object(s) in main().
+Apply the unary operator to the object.
+Display the values before and after overloading.
+End the program.
+
+Program (C++)
+#include <iostream>
+using namespace std;
+class Number {
+    int x;
+
+public:
+    // Constructor
+    Number(int a) {
+        x = a;
+    }
+
+    // Unary operator overloading for ++
+    void operator++() {
+        x = x + 1;
+    }
+
+    // Unary operator overloading for -
+    void operator-() {
+        x = -x;
+    }
+
+    // Display function
+    void display() {
+        cout << "Value of x: " << x << endl;
+    }
+};
+
+int main() {
+    Number n(10);
+
+    cout << "Initial Value:" << endl;
+    n.display();
+
+    // Calling overloaded ++ operator
+    ++n;
+
+    cout << "\nAfter Applying ++ Operator:" << endl;
+    n.display();
+
+    // Calling overloaded unary - operator
+    -n;
+
+    cout << "\nAfter Applying Unary - Operator:" << endl;
+    n.display();
+
+    return 0;
+}
+
+Sample Output (Result)
+Initial Value:
+Value of x: 10
+
+After Applying ++ Operator:
+Value of x: 11
+
+After Applying Unary - Operator:
+Value of x: -11
+
+Result
+Thus, the program successfully demonstrates the use of unary operator overloading in C++.
