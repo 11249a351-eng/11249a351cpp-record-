@@ -1,0 +1,98 @@
+Aim
+To write a C++ program that demonstrates the use of single inheritance using both
+public inheritance and
+private inheritance.
+
+public
+Algorithm
+Start the program.
+Create a base class with data members and member functions.
+Create a derived class that inherits the base class publicly.
+Public members of base class remain public in derived class.
+Create an object of derived class and access inherited members.
+Display the output.
+End.
+
+Program (Public Inheritance)
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    void showBase() {
+        cout << "This is Base Class (Public Member)." << endl;
+    }
+};
+
+class Derived : public Base {   // public inheritance
+public:
+    void showDerived() {
+        cout << "This is Derived Class." << endl;
+    }
+};
+
+int main() {
+    Derived obj;
+
+    cout << "Public Inheritance Output:" << endl;
+    obj.showBase();      // Accessible because of public inheritance
+    obj.showDerived();
+
+    return 0;
+}
+
+Output (Public Inheritance)
+Public Inheritance Output:
+This is Base Class (Public Member).
+This is Derived Class.
+
+private
+Algorithm
+Create the same base class.
+Create another derived class that inherits the base class privately.
+Public members of base become private in the derived class.
+They can be accessed inside derived class but not through the object.
+Display output using derived class methods.
+End.
+
+Program (Private Inheritance)
+#include <iostream>
+using namespace std;
+
+class Base2 {
+public:
+    void baseFunction() {
+        cout << "This is Base Class Function." << endl;
+    }
+};
+
+class Derived2 : private Base2 {   // private inheritance
+public:
+    void accessBase() {
+        baseFunction();   // Allowed (inside derived class)
+        cout << "Accessed Base Function through Private Inheritance." << endl;
+    }
+};
+
+int main() {
+    Derived2 obj;
+
+    cout << "\nPrivate Inheritance Output:" << endl;
+    obj.accessBase();   // Works because it calls the base function internally
+
+    return 0;
+}
+
+Output (Private Inheritance)
+Private Inheritance Output:
+This is Base Class Function.
+Accessed Base Function through Private Inheritance.
+
+Result
+Thus, the program successfully demonstrates:
+Single Public Inheritance:
+Public members of base class remain public in derived class.
+Accessible through derived class object.
+Single Private Inheritance:
+Public members of base class become private in derived class.
+Accessible only within derived class, not through object.
