@@ -1,0 +1,52 @@
+Aim
+To write a C++ program that demonstrates function overloading applied to the member functions of a class.
+
+Algorithm
+Start the program.
+Create a class with at least two or more functions having the same name but different parameter lists.
+Inside the class, define the overloaded functions.
+Create an object of the class.
+Call the overloaded functions using the object by passing different numbers or types of arguments.
+Observe how the correct function is invoked based on the argument list.
+Display the result.
+End the program.
+
+Program (C++)
+#include <iostream>
+using namespace std;
+
+class Calculator {
+public:
+    // Function with one parameter
+    void add(int a) {
+        cout << "Addition with one parameter: " << a << endl;
+    }
+
+    // Overloaded function with two parameters
+    void add(int a, int b) {
+        cout << "Addition with two parameters: " << a + b << endl;
+    }
+
+    // Overloaded function with three parameters
+    void add(int a, int b, int c) {
+        cout << "Addition with three parameters: " << a + b + c << endl;
+    }
+};
+
+int main() {
+    Calculator obj;
+
+    obj.add(10);          // Calls 1st function
+    obj.add(10, 20);      // Calls 2nd function
+    obj.add(10, 20, 30);  // Calls 3rd function
+
+    return 0;
+}
+
+Output (Result)
+Addition with one parameter: 10
+Addition with two parameters: 30
+Addition with three parameters: 60
+
+Result
+Thus, the program successfully demonstrates function overloading applied to the member functions of a class in C++.
