@@ -1,0 +1,68 @@
+Aim
+To write a C++ program that demonstrates the use of friend function and friend class to access private members of a class.
+
+Algorithm
+Start the program.
+Create a class with private data members.
+Declare a friend function inside the class.
+Declare another class as a friend class.
+Define the friend function outside the class and access the private members.
+In the friend class, create a member function that accesses the private members of the original class.
+Create objects and call both the friend function and the friend class function.
+Display the results.
+End the program.
+
+Program (C++)
+#include <iostream>
+using namespace std;
+class A {
+private:
+    int value;
+
+public:
+    A(int v) {
+        value = v;
+    }
+
+    // Friend function declaration
+    friend void showValue(A obj);
+
+    // Friend class declaration
+    friend class B;
+};
+
+// Friend function definition
+void showValue(A obj) {
+    cout << "Friend Function: Value = " << obj.value << endl;
+}
+
+class B {
+public:
+    // Function inside friend class accessing private members of A
+    void display(A obj) {
+        cout << "Friend Class: Value = " << obj.value << endl;
+    }
+};
+
+int main() {
+    A objA(100);  // create object
+    B objB;       // create object of friend class
+
+    // Calling friend function
+    showValue(objA);
+
+    // Calling friend class function
+    objB.display(objA);
+
+    return 0;
+}
+
+Sample Output (Result)
+Friend Function: Value = 100
+Friend Class: Value = 100
+
+Result
+Thus, the program successfully illustrates the use of both:
+Friend Function
+Friend Class
+to access private members of another class.
