@@ -1,0 +1,38 @@
+Aim
+To write a C++ program that demonstrates the use of function templates, allowing a single function to work with different data types.
+
+Algorithm
+Start the program.
+Declare a function template using template <class T>.
+Define the function to perform a simple operation (e.g., swapping, finding maximum).
+Call the template function using different data types (int, float, char, etc.).
+Display the results.
+End the program.
+
+Program (C++ – Function Template Example)
+#include <iostream>
+using namespace std;
+
+template <class T>
+T findMax(T a, T b) {   // function template
+    return (a > b) ? a : b;
+}
+
+int main() {
+    cout << "Using Function Template:" << endl;
+
+    cout << "Max (int) = " << findMax(10, 20) << endl;
+    cout << "Max (float) = " << findMax(2.5f, 3.8f) << endl;
+    cout << "Max (char) = " << findMax('A', 'Z') << endl;
+
+    return 0;
+}
+
+Sample Output (Result)
+Using Function Template:
+Max (int) = 20
+Max (float) = 3.8
+Max (char) = Z
+
+Result
+The program successfully demonstrates the use of function templates, where the same function works with different data types such as int, float, and char.
