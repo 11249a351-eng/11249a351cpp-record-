@@ -1,0 +1,53 @@
+Aim
+To write a program that illustrates the concept of class and objects in Object-Oriented Programming.
+
+Algorithm
+Start the program.
+Define a class with data members (attributes).
+Create a constructor to initialize the data members.
+Define a method to display the attribute values.
+Create objects (instances) of the class.
+Using the objects, access the methods of the class.
+Display the results.
+End the program.
+
+Program (Python)
+# Program to illustrate Class and Objects
+
+class Student:
+    # Constructor to initialize object
+    def __init__(self, name, roll, marks):
+        self.name = name
+        self.roll = roll
+        self.marks = marks
+
+    # Method to display data
+    def display(self):
+        print("Name:", self.name)
+        print("Roll Number:", self.roll)
+        print("Marks:", self.marks)
+
+
+# Creating objects of the Student class
+s1 = Student("Alice", 101, 89)
+s2 = Student("Bob", 102, 92)
+
+print("Details of Student 1:")
+s1.display()
+
+print("\nDetails of Student 2:")
+s2.display()
+
+Output (Result)
+Details of Student 1:
+Name: Alice
+Roll Number: 101
+Marks: 89
+
+Details of Student 2:
+Name: Bob
+Roll Number: 102
+Marks: 92
+
+Result
+Thus, the program successfully demonstrates the concept of class and objects in OOP.
