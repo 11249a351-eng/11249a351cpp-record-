@@ -1,0 +1,228 @@
+⭐ PROGRAM 1: Draw a Line
+Aim
+To write a C++ program to draw a simple straight line using graphics.
+
+Algorithm
+Start the program.
+Include <graphics.h> and <conio.h>.
+Initialize graphics mode using initgraph().
+Use the function line(x1, y1, x2, y2) to draw a line.
+Wait for key press using getch().
+Close graphics mode using closegraph().
+Stop the program.
+
+Program
+#include <graphics.h>
+#include <conio.h>
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+
+    line(100, 100, 300, 100);
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+Result
+A straight horizontal line is drawn on the graphics window.
+
+⭐ PROGRAM 2: Draw a Rectangle
+Aim
+To write a C++ program to draw a rectangle using graphics functions.
+
+Algorithm
+Start program and initialize graphics mode.
+Call rectangle(left, top, right, bottom) function.
+Display the output.
+Wait for user input.
+Close the graphics window.
+
+Program
+#include <graphics.h>
+#include <conio.h>
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+
+    rectangle(100, 100, 300, 200);
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+Result
+A rectangle appears on the graphics window.
+
+⭐ PROGRAM 3: Draw a Circle
+Aim
+To draw a circle using graphics functions in C++.
+
+Algorithm
+Initialize graphics mode.
+Use circle(x, y, radius) to draw a circle.
+Display output.
+Close the graphics mode.
+
+Program
+#include <graphics.h>
+#include <conio.h>
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+
+    circle(250, 200, 80);
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+Result
+A circle with radius 80 is displayed.
+
+⭐ PROGRAM 4: Draw a Triangle
+Aim
+To draw a triangle using line graphics primitives.
+
+Algorithm
+Initialize graphics mode.
+Draw three lines connecting three vertices.
+Display output.
+Close graphics window.
+
+Program
+#include <graphics.h>
+#include <conio.h>
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+
+    line(150, 100, 100, 200);
+    line(150, 100, 200, 200);
+    line(100, 200, 200, 200);
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+Result
+A triangle is drawn on the screen.
+
+⭐ PROGRAM 5: Filled Circle Using floodfill
+Aim
+To draw and fill a circle using fill styles in graphics.
+
+Algorithm
+Initialize graphics.
+Draw a circle.
+Set fill style and color.
+Apply floodfill(x, y, border_color).
+Close the graphics window.
+
+Program
+#include <graphics.h>
+#include <conio.h>
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+
+    circle(250, 200, 80);
+    setfillstyle(SOLID_FILL, RED);
+    floodfill(250, 200, WHITE);
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+Result
+A red filled circle appears on the graphics screen.
+
+⭐ PROGRAM 6: Display Text in Graphics
+Aim
+To display text inside a graphics window.
+
+Algorithm
+Initialize graphics.
+Use outtextxy(x, y, text) to print text.
+Wait for user input.
+Close graphics.
+
+Program
+#include <graphics.h>
+#include <conio.h>
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+
+    outtextxy(100, 100, "Graphics Programming in C++");
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+Result
+The message “Graphics Programming in C++” is displayed on the graphics window.
+
+⭐ PROGRAM 7: Draw Pixel Line (Using putpixel)
+Aim
+To draw a line pixel by pixel using putpixel().
+
+Algorithm
+Initialize graphics.
+Use loop to plot pixels.
+Display output.
+Close graphics.
+
+Program
+#include <graphics.h>
+#include <conio.h>
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+
+    for (int i = 100; i <= 300; i++)
+        putpixel(i, 200, WHITE);
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+Result
+A straight horizontal line is drawn using pixels.
+
+⭐ PROGRAM 8: Smiley Face
+Aim
+To draw a smiley face using graphics functions.
+
+Algorithm
+Start graphics.
+Draw circle for the face.
+Draw two eyes and an arc for the smile.
+Close graphics.
+
+Program
+#include <graphics.h>
+#include <conio.h>
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+
+    circle(250, 200, 100);        // face
+    circle(220, 170, 10);        // left eye
+    circle(280, 170, 10);        // right eye
+    arc(250, 220, 200, 340, 50); // smile
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+Result
+A smiley face is displayed in the graphics window.
