@@ -1,0 +1,84 @@
+Aim
+To write a C++ program that demonstrates the use of the
+this pointer to refer to the current object
+inline functions for faster function execution.
+
+Part 1 — Demonstration of this Pointer
+Algorithm
+
+Start the program.
+Define a class with data members.
+Use a parameterized constructor or a setter function where local variables have the same name as data members.
+Use the this pointer to distinguish between data members and function parameters.
+Create an object and display the values.
+End the program.
+
+Program (Using this Pointer)
+#include <iostream>
+using namespace std;
+class Student {
+    int roll;
+    string name;
+
+public:
+    Student(int roll, string name) {
+        this->roll = roll;      // using this pointer
+        this->name = name;      // using this pointer
+    }
+
+    void display() {
+        cout << "Roll Number: " << roll << endl;
+        cout << "Name: " << name << endl;
+    }
+};
+
+int main() {
+    Student s1(101, "Rahul");
+
+    cout << "Using this Pointer:" << endl;
+    s1.display();
+
+    return 0;
+}
+
+Output
+Using this Pointer:
+Roll Number: 101
+Name: Rahul
+
+Part 2 — Demonstration of Inline Function
+Algorithm
+Start the program.
+Declare an inline function for simple operations such as addition or multiplication.
+Call the inline function inside main().
+Display the result.
+End the program.
+
+Program (Inline Function)
+#include <iostream>
+using namespace std;
+inline int add(int a, int b) {    // inline function
+    return a + b;
+}
+
+int main() {
+    int x = 10, y = 20;
+
+    cout << "\nUsing Inline Function:" << endl;
+    cout << "Sum = " << add(x, y) << endl;
+
+    return 0;
+}
+
+Output
+Using Inline Function:
+Sum = 30
+
+Result
+The program successfully demonstrates:
+Use of this pointer
+Helps to refer to the current object's data members.
+Resolves naming conflicts between parameters and member variables.
+Use of inline function
+Allows small functions to execute faster.
+Avoids function call overhead.
