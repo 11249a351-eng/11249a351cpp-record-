@@ -1,0 +1,58 @@
+Aim
+To write a C++ program that demonstrates the use of a user-defined namespace.
+
+Algorithm
+Start the program.
+Create a user-defined namespace.
+Declare variables and functions inside the namespace.
+Access the namespace members using namespace_name::member.
+Create another namespace (optional) to show conflict resolution.
+Display the results.
+End the program.
+
+Program (C++ – User Defined Namespace)
+#include <iostream>
+using namespace std;
+namespace MySpace {
+    int x = 10;
+
+    void display() {
+        cout << "Inside MySpace Namespace" << endl;
+        cout << "Value of x = " << x << endl;
+    }
+}
+
+namespace YourSpace {
+    int x = 50;
+
+    void display() {
+        cout << "Inside YourSpace Namespace" << endl;
+        cout << "Value of x = " << x << endl;
+    }
+}
+
+int main() {
+    cout << "Using User-Defined Namespaces:" << endl;
+
+    MySpace::display();     // Calling MySpace function
+    YourSpace::display();   // Calling YourSpace function
+
+    cout << "Accessing x separately:" << endl;
+    cout << "MySpace::x = " << MySpace::x << endl;
+    cout << "YourSpace::x = " << YourSpace::x << endl;
+
+    return 0;
+}
+
+Sample Output (Result)
+Using User-Defined Namespaces:
+Inside MySpace Namespace
+Value of x = 10
+Inside YourSpace Namespace
+Value of x = 50
+Accessing x separately:
+MySpace::x = 10
+YourSpace::x = 50
+
+Result
+Thus, the program successfully demonstrates the use of user-defined namespaces in C++ and shows how they prevent naming conflicts by grouping variables and functions.
