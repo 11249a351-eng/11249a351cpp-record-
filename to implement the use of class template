@@ -1,0 +1,56 @@
+Aim
+To write a C++ program that demonstrates the use of class templates, allowing a class to work with different data types.
+
+Algorithm
+Start the program.
+Declare a class template using template <class T>.
+Define data members and member functions inside the template class.
+Create objects of the template class with different data types (int, float, etc.).
+Call the member functions and display the output.
+End the program.
+
+Program (C++ – Class Template Example)
+#include <iostream>
+using namespace std;
+template <class T>
+class Calculator {
+    T num1, num2;
+
+public:
+    Calculator(T a, T b) {
+        num1 = a;
+        num2 = b;
+    }
+
+    void display() {
+        cout << "Numbers: " << num1 << " & " << num2 << endl;
+        cout << "Addition = " << num1 + num2 << endl;
+        cout << "Multiplication = " << num1 * num2 << endl;
+        cout << "--------------------------" << endl;
+    }
+};
+
+int main() {
+    cout << "Using Class Template:" << endl;
+
+    Calculator<int> c1(10, 20);          // integer type
+    Calculator<float> c2(2.5f, 3.5f);    // float type
+
+    c1.display();
+    c2.display();
+
+    return 0;
+}
+
+Sample Output (Result)
+Using Class Template:
+Numbers: 10 & 20
+Addition = 30
+Multiplication = 200
+--------------------------
+Numbers: 2.5 & 3.5
+Addition = 6
+Multiplication = 8.75
+--------------------------
+Result
+The program successfully demonstrates the use of class templates, allowing the same class to operate on different data types such as int and float.
