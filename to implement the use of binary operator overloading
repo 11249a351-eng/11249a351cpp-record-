@@ -1,0 +1,66 @@
+Aim
+To write a C++ program that demonstrates binary operator overloading using a class.
+
+Algorithm
+Start the program.
+Create a class with data members.
+Define a constructor to initialize the objects.
+Overload a binary operator (such as +, -, or *) using a member function.
+In the operator function, take another object as an argument and perform the operation.
+Return the resulting object.
+Create objects in the main() function.
+Apply the binary operator between the objects.
+Display the results.
+End the program.
+
+Program (C++)
+#include <iostream>
+using namespace std;
+class Number {
+    int x;
+
+public:
+    // Constructor
+    Number(int a = 0) {
+        x = a;
+    }
+
+    // Binary operator overloading for +
+    Number operator+(Number obj) {
+        Number temp;
+        temp.x = x + obj.x;   // add values of both objects
+        return temp;
+    }
+
+    // Display function
+    void display() {
+        cout << "Value: " << x << endl;
+    }
+};
+
+int main() {
+    Number n1(20), n2(30), n3;
+
+    cout << "Object 1: ";
+    n1.display();
+
+    cout << "Object 2: ";
+    n2.display();
+
+    // Using overloaded + operator
+    n3 = n1 + n2;
+
+    cout << "\nResult After Applying + Operator:" << endl;
+    n3.display();
+
+    return 0;
+}
+
+Sample Output (Result)
+Object 1: Value: 20
+Object 2: Value: 30
+Result After Applying + Operator:
+Value: 50
+
+Result
+Thus, the program successfully demonstrates the use of binary operator overloading in C++, where a binary operator (+) is overloaded to operate on objects.
