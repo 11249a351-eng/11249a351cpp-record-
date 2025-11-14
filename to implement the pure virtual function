@@ -1,0 +1,58 @@
+Aim
+To write a C++ program that demonstrates the use of a pure virtual function and the concept of an abstract class.
+
+Algorithm
+Start the program.
+Create an abstract base class with a pure virtual function.
+Create a derived class that publicly inherits from the base class.
+Override the pure virtual function in the derived class.
+Create an object of the derived class.
+Call the overridden function using the derived class object.
+Display the result.
+End the program.
+
+Program (C++)
+#include <iostream>
+using namespace std;
+// Abstract class
+class Shape {
+public:
+    virtual void area() = 0;  // pure virtual function
+};
+
+// Derived class
+class Rectangle : public Shape {
+    int length, breadth;
+
+public:
+    Rectangle(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+
+    void area() {   // overriding pure virtual function
+        cout << "Area of Rectangle = " << (length * breadth) << endl;
+    }
+};
+
+int main() {
+    Shape *ptr;
+    Rectangle r(10, 5);
+
+    ptr = &r;
+    cout << "Pure Virtual Function Output:" << endl;
+    ptr->area();
+
+    return 0;
+}
+
+Sample Output (Result)
+Pure Virtual Function Output:
+Area of Rectangle = 50
+
+Result
+The program successfully demonstrates:
+Concept of abstract class
+Use of pure virtual function
+Function overriding in the derived class
+Runtime polymorphism using base class pointer
