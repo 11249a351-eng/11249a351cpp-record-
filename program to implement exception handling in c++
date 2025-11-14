@@ -1,0 +1,49 @@
+Aim
+To write a C++ program that demonstrates exception handling using try, throw, and catch blocks.
+
+Algorithm
+Start the program.
+Accept numerator and denominator from the user.
+In a try block, check whether denominator is zero.
+If denominator is zero, throw an exception.
+Catch the exception using a catch block and display an error message.
+If no exception occurs, perform division and display the result.
+End the program.
+
+Program (C++ – Exception Handling Example)
+#include <iostream>
+using namespace std;
+int main() {
+    int num, den;
+
+    cout << "Enter Numerator: ";
+    cin >> num;
+    cout << "Enter Denominator: ";
+    cin >> den;
+
+    try {
+        if (den == 0) {
+            throw den;  // throwing exception
+        }
+        cout << "Result = " << (num / den) << endl;
+    }
+    catch (int) {
+        cout << "Exception Caught: Division by Zero is Not Allowed!" << endl;
+    }
+
+    return 0;
+}
+
+Sample Output (Result)
+Case 1: Valid Input
+Enter Numerator: 20
+Enter Denominator: 4
+Result = 5
+
+Case 2: Division by Zero
+Enter Numerator: 20
+Enter Denominator: 0
+Exception Caught: Division by Zero is Not Allowed!
+
+Result
+Thus, the program successfully demonstrates the concept of exception handling in C++, using try, throw, and catch to manage runtime errors safely.
