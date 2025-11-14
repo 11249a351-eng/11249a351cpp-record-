@@ -1,0 +1,73 @@
+Aim
+To write a program that demonstrates the use of static data members and static member functions in C++.
+
+Algorithm
+Start the program.
+Create a class with a static data member and a normal data member.
+Define a static member function to access or modify the static data member.
+Create objects of the class.
+Access the static data member through:
+the class name
+the static member function
+Access the normal data member using objects.
+Display the results.
+End the program.
+
+Program (C++)
+#include <iostream>
+using namespace std;
+
+class Student {
+    int roll;                    // normal data member
+    static int count;            // static data member
+
+public:
+    // Constructor
+    Student(int r) {
+        roll = r;
+        count++;                 // increment static variable
+    }
+
+    // Static member function
+    static void displayCount() {
+        cout << "Total Students: " << count << endl;
+    }
+
+    // Function to display roll number
+    void display() {
+        cout << "Roll Number: " << roll << endl;
+    }
+};
+
+// Definition of static data member
+int Student::count = 0;
+
+int main() {
+    Student s1(101);
+    Student s2(102);
+    Student s3(103);
+
+    cout << "Displaying Individual Students:" << endl;
+    s1.display();
+    s2.display();
+    s3.display();
+
+    cout << "\nCalling Static Member Function:" << endl;
+    Student::displayCount();   // calling static function using class name
+
+    return 0;
+}
+
+Output (Result)
+Displaying Individual Students:
+Roll Number: 101
+Roll Number: 102
+Roll Number: 103
+
+Calling Static Member Function:
+Total Students: 3
+
+Result
+Thus, the program successfully demonstrates the concept of:
+Static Data Member (shared by all objects)
+Static Member Function (can be called using the class name without creating an object)
