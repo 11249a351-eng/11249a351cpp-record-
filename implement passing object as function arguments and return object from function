@@ -1,0 +1,80 @@
+Aim
+To write a program that demonstrates how an object can be passed as an argument to a function and how a function can return an object in Object-Oriented Programming.
+
+Algorithm
+Start the program.
+Create a class with data members.
+Define a member function that accepts an object of the same class as an argument.
+Define another function that creates an object and returns it.
+In main(), create objects of the class.
+Pass an object as an argument to a member function.
+Call the function that returns an object and store the returned object.
+Display the result.
+End the program.
+
+Program (C++)
+#include <iostream>
+using namespace std;
+
+class Number {
+    int value;
+
+public:
+    // Constructor
+    Number(int v = 0) {
+        value = v;
+    }
+
+    // Function to add the value of another object
+    void add(Number obj) {
+        value = value + obj.value;
+    }
+
+    // Function that returns an object
+    Number createObject(int x) {
+        Number temp(x);   // create new object
+        return temp;      // return object
+    }
+
+    // Display function
+    void display() {
+        cout << "Value: " << value << endl;
+    }
+};
+
+int main() {
+    Number n1(10), n2(20);
+
+    cout << "Initial Values:" << endl;
+    n1.display();
+    n2.display();
+
+    // Passing object as argument
+    n1.add(n2);
+
+    cout << "\nAfter Adding n2 to n1:" << endl;
+    n1.display();
+
+    // Returning an object from function
+    Number n3;
+    n3 = n1.createObject(50);
+
+    cout << "\nObject Returned from Function:" << endl;
+    n3.display();
+
+    return 0;
+}
+
+Output (Result)
+Initial Values:
+Value: 10
+Value: 20
+
+After Adding n2 to n1:
+Value: 30
+
+Object Returned from Function:
+Value: 50
+
+Result
+Thus, the program successfully demonstrates
