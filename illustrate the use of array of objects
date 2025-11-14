@@ -1,0 +1,73 @@
+Aim
+To write a program that demonstrates the use of an array of objects in C++.
+
+Algorithm
+Start the program.
+Create a class with data members and member functions.
+Declare an array of objects of the class.
+Use a loop to input values for each object in the array.
+Use another loop to display the values stored in each object.
+End the program.
+
+Program (C++)
+#include <iostream>
+using namespace std;
+
+class Student {
+    int roll;
+    float marks;
+
+public:
+    // Function to input student details
+    void getData() {
+        cout << "Enter Roll Number: ";
+        cin >> roll;
+        cout << "Enter Marks: ";
+        cin >> marks;
+    }
+
+    // Function to display student details
+    void display() {
+        cout << "Roll Number: " << roll << ", Marks: " << marks << endl;
+    }
+};
+
+int main() {
+    Student s[3];  // array of objects
+
+    cout << "Enter details of 3 students:" << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << "\nStudent " << i+1 << ":" << endl;
+        s[i].getData();
+    }
+
+    cout << "\nDisplaying Student Details:" << endl;
+    for (int i = 0; i < 3; i++) {
+        s[i].display();
+    }
+
+    return 0;
+}
+
+Sample Output (Result)
+Enter details of 3 students:
+
+Student 1:
+Enter Roll Number: 101
+Enter Marks: 89
+
+Student 2:
+Enter Roll Number: 102
+Enter Marks: 76
+
+Student 3:
+Enter Roll Number: 103
+Enter Marks: 95
+
+Displaying Student Details:
+Roll Number: 101, Marks: 89
+Roll Number: 102, Marks: 76
+Roll Number: 103, Marks: 95
+
+Result
+Thus, the concept of array of objects is successfully demonstrated using a class and multiple object instances stored in an array.
