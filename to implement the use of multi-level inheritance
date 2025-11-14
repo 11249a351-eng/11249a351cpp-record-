@@ -1,0 +1,63 @@
+Aim
+To write a C++ program that demonstrates multilevel inheritance, where a derived class inherits from another derived class, forming a multi-step inheritance chain.
+
+Algorithm
+Start the program.
+Create a base class with a member function.
+Create a second class that inherits publicly from the base class.
+Create a third class that inherits publicly from the second derived class (multilevel).
+Define member functions in each class to show their identity.
+In the main() function, create an object of the last derived class.
+Call functions from all classes to show inheritance flow.
+Display the output.
+End the program.
+
+Program (C++)
+#include <iostream>
+using namespace std;
+// Base class
+class A {
+public:
+    void showA() {
+        cout << "This is Class A (Base Class)." << endl;
+    }
+};
+
+// Derived from A
+class B : public A {
+public:
+    void showB() {
+        cout << "This is Class B (Derived from A)." << endl;
+    }
+};
+
+// Derived from B (Multilevel inheritance)
+class C : public B {
+public:
+    void showC() {
+        cout << "This is Class C (Derived from B)." << endl;
+    }
+};
+
+int main() {
+    C obj;
+
+    cout << "Multilevel Inheritance Output:" << endl;
+    obj.showA();   // From class A
+    obj.showB();   // From class B
+    obj.showC();   // From class C
+
+    return 0;
+}
+
+Sample Output (Result)
+Multilevel Inheritance Output:
+This is Class A (Base Class).
+This is Class B (Derived from A).
+This is Class C (Derived from B).
+
+Result
+The program successfully demonstrates multilevel inheritance, where:
+Class B inherits from Class A
+Class C inherits from Class B
+Thus forming an inheritance chain A → B → C.
